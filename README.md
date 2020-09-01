@@ -67,25 +67,7 @@ log - Bot Log [owner only]
 ```
 
 # How to deploy?
-Deploying is pretty much straight forward and is divided into several steps as follows:
-## Installing requirements
-
-- Clone this repo:
-```
-git clone https://github.com/magneto261290/magneto-python-aria mirror-bot/
-cd mirror-bot
-```
-
-- Install requirements
-For Debian based distros
-```
-sudo apt install python3
-sudo snap install docker 
-```
-- For Arch and it's derivatives:
-```
-sudo pacman -S docker python
-```
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ## Setting up config file
 ```
