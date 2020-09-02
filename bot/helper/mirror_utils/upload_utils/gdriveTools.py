@@ -319,7 +319,7 @@ class GoogleDriveHelper:
             if meta.get("mimeType") == self.__G_DRIVE_DIR_MIME_TYPE:
                 dir_id = self.create_directory(meta.get('name'), parent_id)
                 result = self.cloneFolder(meta.get('name'), meta.get('name'), meta.get('id'), dir_id)
-                msg += f'<b>○ 🌀 Folder Name :</b> <code>{meta.get("name")}</code>\n\n<b>○ 💾 Total Size :</b> 💾 Size :</b> {get_readable_file_size(self.transferred_size)}\n\n<b>⚠ DO NOT <u>SHARE</u> INDEX LINK PUBLICLY ⚠</b>\n\n<b>#File Cloned To Team Drive ✅</b>\n\n<b>○ 🗳 Powered By @Modzilla</b>'
+                msg += f'<b>○ 🌀 Folder Name :</b> <code>{meta.get("name")}</code>\n\n<b>○ 💾 Total Size :</b> {get_readable_file_size(self.transferred_size)}\n\n<b>⚠ DO NOT <u>SHARE</u> INDEX LINK PUBLICLY ⚠</b>\n\n<b>#File Cloned To Team Drive ✅</b>\n\n<b>○ 🗳 Powered By @Modzilla</b>'
                 buttons = button_build.ButtonMaker()
                 buttons.buildbutton("🌍 GDRIVE LINK", self.__G_DRIVE_DIR_BASE_DOWNLOAD_URL.format(dir_id))
                 if INDEX_URL is not None:
