@@ -319,13 +319,9 @@ class GoogleDriveHelper:
             if meta.get("mimeType") == self.__G_DRIVE_DIR_MIME_TYPE:
                 dir_id = self.create_directory(meta.get('name'), parent_id)
                 result = self.cloneFolder(meta.get('name'), meta.get('name'), meta.get('id'), dir_id)
-                msg += f'<b>○ 🌀 Folder Name :</b> <code>{meta.get("name")}</code>'
+                msg += f'<b>○ 🌀 Folder Name :</b> <code>{meta.get("name")}</code>\n\n<b>○ 💾 Total Size :</b> <code>{get_readable_file_size(int(meta.get("size")))}</code>\n\n<b>⚠ DO NOT <u>SHARE</u> INDEX LINK PUBLICLY ⚠</b>\n\n<b>#Folder Cloned To Team Drive ✅</b>\n\n<b>○ 🗳 Powered By @Modzilla</b>'
                 buttons = button_build.ButtonMaker()
                 buttons.buildbutton("🌍 GDRIVE LINK", self.__G_DRIVE_DIR_BASE_DOWNLOAD_URL.format(dir_id))
-                try:
-                    msg += f'\n\n<b>○ 💾 Total Size :</b> <code>{get_readable_file_size(int(meta.get("size")))}</code>\n\n<b>⚠ DO NOT <u>SHARE</u> INDEX LINK PUBLICLY ⚠</b>\n\n<b>#Folder Cloned To Team Drive ✅</b>\n\n<b>○ 🗳 Powered By @Modzilla</b>'
-                except TypeError:
-                    pass
                 if INDEX_URL is not None:
                     url = requests.utils.requote_uri(f'{INDEX_URL}/{meta.get("name")}/')
                     buttons.buildbutton("📁 INDEX URL", url)
