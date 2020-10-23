@@ -152,9 +152,9 @@ class MirrorListener(listeners.MirrorListeners):
                     share_url += '/'
                 if SHORTENER is not None and SHORTENER_API is not None:
                     siurl = requests.get('https://{}/api?api={}&url={}&format=text'.format(SHORTENER, SHORTENER_API, share_url)).text
-                    buttons.buildbutton("📁 𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞 📁", siurl)
+                    buttons.buildbutton("📃 𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞 📃", siurl)
                 else:
-                    buttons.buildbutton("📁 𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞 📁", share_url)
+                    buttons.buildbutton("📃 𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞 📃", share_url)
             if BUTTON_THREE_NAME is not None and BUTTON_THREE_URL is not None:
                 buttons.buildbutton(f"{BUTTON_THREE_NAME}", f"{BUTTON_THREE_URL}")
             if BUTTON_FOUR_NAME is not None and BUTTON_FOUR_URL is not None:
@@ -166,7 +166,7 @@ class MirrorListener(listeners.MirrorListeners):
             else:
                 uname = f'<a href="tg://user?id={self.message.from_user.id}">{self.message.from_user.first_name}</a>'
             if uname is not None:
-                msg += f'\n\n<b>○ 👤 Uploader :</b> {uname}\n\n<b>#Uploaded To Team Drive ✅</b>\n\n<b>○ 🗳 Powered By @Modzilla</b>\n\n<b>⚠ 𝗗𝗢 𝗡𝗢𝗧 <u>𝗦𝗛𝗔𝗥𝗘</u> 𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞 𝗣𝗨𝗕𝗟𝗜𝗖𝗟𝗬 ⚠</b>'
+                msg += f'\n\n<b>○ 👤 Uploader :</b> {uname}\n\n<b>#Uploaded To Team Drive ✅</b>\n\n<b>○ 🗳 𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗕𝘆 @Modzilla</b>\n\n<b>⚠ 𝗗𝗢 𝗡𝗢𝗧 <u>𝗦𝗛𝗔𝗥𝗘</u> 𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞 𝗣𝗨𝗕𝗟𝗜𝗖𝗟𝗬 ⚠</b>'
             try:
                 fs_utils.clean_download(download_dict[self.uid].path())
             except FileNotFoundError:
