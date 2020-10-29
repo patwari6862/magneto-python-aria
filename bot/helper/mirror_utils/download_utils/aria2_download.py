@@ -26,7 +26,7 @@ class AriaDownloadHelper(DownloadHelper):
         smsg, button = gdrive.drive_list(sname)
         if STOP_DUPLICATE_MIRROR:
             if smsg:
-                dl.getListener().onDownloadError(f'*File Has Been Uploaded Previously Into The Team Drive 📁.\n\nKindly Search Next Time Before Mirroring, This Download Has Been Cancelled. ❌*\n\n')
+                dl.getListener().onDownloadError(f'\n\nFile Has Been Uploaded Previously Into The Team Drive 📁.Kindly Search Next Time Before Mirroring, This Download Has Been Cancelled. ❌\n\n')
                 print(dl.getListener())
                 sendMarkup("<b>Below Are The Search Results :</b> 👇👇", dl.getListener().bot, dl.getListener().update, button)
                 aria2.remove([download])
