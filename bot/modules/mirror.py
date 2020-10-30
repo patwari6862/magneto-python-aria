@@ -152,7 +152,7 @@ class MirrorListener(listeners.MirrorListeners):
                     share_url += '/'
                 if SHORTENER is not None and SHORTENER_API is not None:
                     siurl = requests.get('https://{}/api?api={}&url={}&format=text'.format(SHORTENER, SHORTENER_API, share_url)).text
-                    buttons.buildbutton("📃 𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞 📃", siurl)
+                    buttons.buildbutton("📃 📃", siurl)
                 else:
                     buttons.buildbutton("📃 𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞 📃", share_url)
             if BUTTON_THREE_NAME is not None and BUTTON_THREE_URL is not None:
